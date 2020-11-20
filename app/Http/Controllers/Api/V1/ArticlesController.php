@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\ArticleStoreRequest;
 use App\Http\Resources\Api\ArticlesElasticResource;
 use App\Http\Resources\ArticleResource;
 use App\Models\Article;
+use App\Models\File;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -86,15 +88,16 @@ class ArticlesController extends Controller
         ];
     }
 
-    public function store(Request $request){
+    public function store(ArticleStoreRequest $request){
         $article = new Article();
         $article->title = $request->title;
         $article->description = $request->description;
         $article->body = $request->body;
-        $article->user_id = $request->user_id;
+        $article->user_id = $request->user()->id;
         $article->tags = $request->tags;
         $article->save();
-        return ArticleResource::make($article);
+        $article->files()->saveMany(File::whereIn('id', $request->images)->get());
+        return ArticleResource::make($article->load(['user', 'files']));
     }
 
     public function show($id)

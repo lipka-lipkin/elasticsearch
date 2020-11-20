@@ -37,4 +37,8 @@ class Article extends Model
             'updated_at' => $this->updated_at,
         ];
     }
+
+    public function files(){
+        return $this->morphMany(File::class, 'fileable');
+    }
 }

@@ -21,3 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('articles/autocomplete', 'ArticlesController@autocomplete');
 Route::get('articles', 'ArticlesController@index');
 Route::post('articles', 'ArticlesController@store');
+
+Route::post('files', 'FilesController@store');
+
+Route::any('images/resize', 'FilesController@resize');
