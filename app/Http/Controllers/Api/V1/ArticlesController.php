@@ -8,7 +8,6 @@ use App\Http\Resources\Api\ArticlesElasticResource;
 use App\Http\Resources\ArticleResource;
 use App\Models\Article;
 use App\Models\File;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class ArticlesController extends Controller

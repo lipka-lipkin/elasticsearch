@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Models\Article;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -33,8 +35,8 @@ class AppServiceProvider extends ServiceProvider
     }
 
     private function listenDataBaseEvents(){
-        if (!app()->isProduction()) {
-            \DB::listen(function ($query) {
+        if (!app()->isProduction()) { // todo need to create static method app()->isProduction()
+            DB::listen(function ($query) {
                 $sql = array_reduce($query->bindings, function($sql, $binding){
                     if($binding instanceof \DateTime)
                     {
@@ -42,7 +44,7 @@ class AppServiceProvider extends ServiceProvider
                     }
                     return preg_replace('/\?/', is_numeric($binding) ? $binding : "'".$binding."'" , $sql, 1);
                 }, $query->sql);
-                \Log::info($sql);
+                Log::info($sql);
             });
         }
     }
