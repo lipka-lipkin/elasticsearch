@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f79a4ecc0f8a1c10ae68d68736d4c3ef",
+    "content-hash": "2a86c654539c443a03bf1e13d232471f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -57,60 +57,6 @@
                 "stack"
             ],
             "time": "2020-10-29T16:03:21+00:00"
-        },
-        {
-            "name": "authy/php",
-            "version": "4.0.0-rc1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twilio/authy-php.git",
-                "reference": "42509c4e05d6fbb13382015f7b6af92035571863"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twilio/authy-php/zipball/42509c4e05d6fbb13382015f7b6af92035571863",
-                "reference": "42509c4e05d6fbb13382015f7b6af92035571863",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "~6.0||~7.0",
-                "php": "^7.2.5"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^8.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Authy": "lib"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Twilio Authy",
-                    "email": "help@twilio.com",
-                    "homepage": "https://www.twilio.com/docs/authy/api",
-                    "role": "Official support"
-                },
-                {
-                    "name": "Kelley Robinson",
-                    "email": "krobinson@twilio.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "PHP client for Authy",
-            "homepage": "https://github.com/twilio/authy-php",
-            "keywords": [
-                "2fa",
-                "Authentication",
-                "api",
-                "two-factor"
-            ],
-            "time": "2020-10-10T03:59:10+00:00"
         },
         {
             "name": "babenkoivan/elastic-adapter",

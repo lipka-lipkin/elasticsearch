@@ -49,13 +49,15 @@ class User extends Authenticatable
      *
      * @return array
      */
-    public function toSearchableArray()
-    {
+    public function toSearchableArray(){
         return $this->toArray();
     }
 
-    public function articles()
-    {
+    public function articles(){
         return $this->hasMany(Article::class);
+    }
+
+    public function phoneNumber(){
+        return $this->hasOne(PhoneNumber::class);
     }
 }

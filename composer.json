@@ -9,7 +9,6 @@
     "license": "MIT",
     "require": {
         "php": "^7.3",
-        "authy/php": "4.0.0-rc1",
         "babenkoivan/elastic-migrations": "^1.2",
         "babenkoivan/elastic-scout-driver": "^1.2",
         "babenkoivan/elastic-scout-driver-plus": "^1.10",
