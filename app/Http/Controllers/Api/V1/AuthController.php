@@ -13,6 +13,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'name' => $request->name,
+            'lang' => $request->lang
         ]);
         return ['status'=>'ok'];
     }

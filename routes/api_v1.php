@@ -27,3 +27,8 @@ Route::post('files', 'FilesController@store');
 Route::any('images/resize', 'FilesController@resize');
 
 Route::post('register', 'AuthController@register');
+
+
+Route::group(['middleware' => 'auth:api'], function (){
+    Route::get('evil', 'ExternalApiController@evil');
+});

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDialingCodesTable extends Migration
+class AddLangToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateDialingCodesTable extends Migration
      */
     public function up()
     {
-        Schema::create('dialing_codes', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('dialing_code');
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('lang', 5)->nullable();
         });
     }
 
@@ -27,6 +25,8 @@ class CreateDialingCodesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dialing_codes');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('lang');
+        });
     }
 }
