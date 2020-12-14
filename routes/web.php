@@ -19,5 +19,19 @@ Route::get('/', function () {
 });
 
 Route::any('/articles', function (){
+
+//    phpinfo();
+//    xdebug_info();
+
+    $i = ['qwe', 'asd', 'zxc'];
+    foreach ($i as $a){
+        echo $a;
+    }
+    dd(123);
+
+
     return view('articles', ['articles' => Article::all()->toArray()]);
 });
+
+
+
